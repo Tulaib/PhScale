@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ph Scale</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div style="margin: 10px 0px; font-size: 22px">
+        <h3>pH Scale</h3>
+      </div>
+      <div>
+        <div id="myList" style="display: flex; flex-direction: column"></div>
+      </div>
+      <div class="foot">
+        <p>by Tulaib Ahmed Siddiqui</p>
+      </div>
+    </div>
+    <script>
+      const bgcolors = [
+        "#2c81c4",
+        "#2c90ce",
+        "#1b9dd7",
+        "#31a6dc",
+        "#58b6e9",
+        "#74c1eb",
+        "#74c1eb",
+        "#1cb485",
+        "#f6b0cc",
+        "#f39fc3",
+        "#f28cb3",
+        "#f178a3",
+        "#f26695",
+        "#ee578a",
+        "#ed3a7e",
+      ];
+      for (let i = 14; i >= 1; i--) {
+        const node = document.createElement("div");
+        node.style.cssText =
+          "height:40px;margin:0px 0px 0px 0px;color:white;font-weight:bold;display:flex;align-items:center";
+        const textnode = document.createTextNode("");
+        if (i == 14) {
+          textnode.appendData(i + " Very Alkaline");
+        } else if (i == 7) {
+          textnode.appendData(i + " Neutral");
+        } else if (i == 1) {
+          textnode.appendData(i + " Very Acidic");
+        } else {
+          textnode.appendData(i + " G");
+        }
+        node.style.backgroundColor = bgcolors[i];
+        node.appendChild(textnode);
+        document.getElementById("myList").appendChild(node);
+      }
+    </script>
+  </body>
+</html>
